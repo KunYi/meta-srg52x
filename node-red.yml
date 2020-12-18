@@ -1,0 +1,28 @@
+
+header:
+    version: 10
+
+local_conf_header:
+   node-red: |
+    IMAGE_PREINSTALL += " \
+        cmake \
+        curl \
+        autoconf \
+        autotools-dev \
+        ca-certificates \
+        build-essential \
+        mosquitto \
+        mosquitto-clients \
+        nodejs \
+        npm \
+        wget \
+    "
+
+    IMAGE_INSTALL += " \
+        node-red \
+        node-red-dashboard \
+        node-red-contrib-opcua \
+        node-red-contrib-modbus \
+        node-red-node-serialport \
+        node-red-node-sqlite \
+    "
