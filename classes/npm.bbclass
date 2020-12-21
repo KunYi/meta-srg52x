@@ -158,6 +158,7 @@ python fetch_npm() {
         json_objs = {'dependencies': { npmpn: '' }}
         json.dump(json_objs, outfile, indent=2)
 
+    runcmd(d, "npm config set strict-ssl false", "fetch-tmp")
     runcmd(d, "npm ci --global-style --ignore-scripts --verbose", "fetch-tmp")
 
     os.chdir("node_modules/" + npmpn)
